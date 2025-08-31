@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Viaje à Madrid - LFJP</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="background"></div>
+
+  <div class="container">
+    <div class="header">
+      <img src="logo.png" alt="Logo LFJP" class="logo" />
+      <h1>Inscription au Voyage à Madrid</h1>
+      <p>Lycée Français Jacques Prévert Saly-Sénégal (LFJP)</p>
+    </div>
+
+    <div class="drapeaux">
+      <img src="drapeaux/sn.png" alt="Sénégal" />
+      <img src="drapeaux/fr.png" alt="France" />
+      <img src="drapeaux/es.png" alt="Espagne" />
+      <img src="drapeaux/bo.png" alt="Bolivie" />
+      <img src="drapeaux/uy.png" alt="Uruguay" />
+    </div>
+
+    <section id="formulaire" class="section active">
+      <h2>Formulaire d'Inscription</h2>
+      <form id="form-inscription">
+        <label>Nom et prénom de l'élève *</label>
+        <input type="text" id="nom-eleve" required />
+
+        <label>Classe *</label>
+        <select id="classe-eleve" required>
+          <option value="">Sélectionner...</option>
+          <option value="4ème">4ème</option>
+          <option value="3ème">3ème</option>
+        </select>
+
+        <label>Nom du tuteur *</label>
+        <input type="text" id="nom-tuteur" required />
+
+        <label>Email du tuteur *</label>
+        <input type="email" id="email-tuteur" required />
+
+        <label>Téléphone du tuteur *</label>
+        <input type="tel" id="telephone-tuteur" required />
+
+        <button type="submit">Inscrire</button>
+      </form>
+      <div id="message-form"></div>
+    </section>
+
+    <section id="dashboard" class="section hidden">
+      <h2>Votre Dossier</h2>
+      <p><strong>Code Unique :</strong> <span id="code-dossier"></span></p>
+
+      <h3>Documents</h3>
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="passeport" /> Passeport valide</label>
+        <label><input type="checkbox" id="visa" /> Visa pour l'Espagne</label>
+        <label><input type="checkbox" id="autorisation" /> Autorisation de sortie</label>
+        <label><input type="checkbox" id="medical" /> Autorisation médicale</label>
+      </div>
+
+      <h3>Paiements</h3>
+      <p><strong>30% (Septembre 2025) :</strong></p>
+      <label><input type="checkbox" id="paiement-sep" /> Payé</label>
+
+      <p><strong>Échéancier (Oct 2025 - Avr 2026) :</strong></p>
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="paiement-oct" /> Octobre 2025</label>
+        <label><input type="checkbox" id="paiement-nov" /> Novembre 2025</label>
+        <label><input type="checkbox" id="paiement-dec" /> Décembre 2025</label>
+        <label><input type="checkbox" id="paiement-jan" /> Janvier 2026</label>
+        <label><input type="checkbox" id="paiement-fev" /> Février 2026</label>
+        <label><input type="checkbox" id="paiement-mar" /> Mars 2026</label>
+        <label><input type="checkbox" id="paiement-avr" /> Avril 2026</label>
+      </div>
+
+      <button onclick="sauvegarder()">Sauvegarder</button>
+      <div id="message-sauv"></div>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

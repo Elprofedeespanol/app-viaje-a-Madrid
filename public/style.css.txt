@@ -1,0 +1,67 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  position: relative;
+  min-height: 100vh;
+}
+
+.background {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('fond.jpg') center/cover no-repeat;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.container {
+  max-width: 90%; margin: 20px auto; padding: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.header { text-align: center; margin-bottom: 20px; }
+.logo { width: 100px; height: auto; margin-bottom: 10px; }
+
+.drapeaux {
+  display: flex; justify-content: center; gap: 12px; margin-bottom: 20px;
+}
+.drapeaux img { width: 40px; height: 30px; border-radius: 4px; border: 1px solid #ccc; }
+
+.section { padding: 20px; border-radius: 8px; background: #fff; }
+.hidden { display: none; }
+.active { display: block; }
+
+label { display: block; margin: 12px 0 6px; font-weight: 500; }
+
+input, select {
+  width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px;
+}
+
+button {
+  background: #0056b3; color: white; border: none; padding: 12px 20px;
+  margin-top: 15px; border-radius: 6px; font-size: 16px; cursor: pointer; width: 100%;
+}
+button:hover { background: #004080; }
+
+.checkbox-group label {
+  margin: 8px 0; display: flex; align-items: center; font-weight: normal;
+}
+.checkbox-group input[type="checkbox"] { margin-right: 8px; transform: scale(1.2); }
+
+#message-form, #message-sauv {
+  margin-top: 15px; padding: 10px; border-radius: 6px; font-size: 14px;
+}
+.success { background: #d4edda; color: #155724; }
+.error { background: #f8d7da; color: #721c24; }
+
+body::before {
+  content: "Lycée Français Jacques Prévert Saly-Sénégal (LFJP)";
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 24px; color: rgba(0,0,0,0.05); pointer-events: none; z-index: -1;
+  white-space: nowrap; font-weight: bold;
+}
